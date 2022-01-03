@@ -12,7 +12,14 @@ const MovieList = () => {
     const[description, setDescription]= useState("");
     const [postUrl, setPostUrl] = useState("");
     const [rating, setRating] = useState("");
-    const [list, setList] = useState({title:"",description:"",postUrl:"",rating:"" });
+    const [listData, setListData] = useState({
+        list:
+        {
+        title: "", description: "", postUrl: "", rating: ""
+        }
+    }
+    )
+    //const [list, setList] = useState(listData);
     
     const titleChange=(e)=>{
         setTitle(e.target.value)
@@ -28,22 +35,29 @@ const MovieList = () => {
     }
     const handleChange = async (e) => {
         e.preventDefault();
-        if(title, description,postUrl, rating)
-            setList({
-             title:title,
-             description:description,
-            postUrl:postUrl,
-            rating:rating
+        if (title,description,postUrl,rating) {
+            setListData({
+                ...listData,
+                    list: {
+                    title: title,
+                    description: description,
+                    postUrl: postUrl,
+                    rating:rating
+                }
             })
-        console.log(list);
+            console.log(listData)
+        }
     }
+    React.useEffect(
+        console.log(listData)
+    )
     
 
     
 
     return (
-                <div>
-                    <form>
+        <div>
+            <form>
                 <Box
                     component="form"
                     sx={{
@@ -101,14 +115,14 @@ const MovieList = () => {
                     />
                     </div>
                     <div>
-                    <Button variant="contained" type="submit" onClick={handleChange}>
+                             <Button variant="contained" type="submit" onClick={handleChange}>
                         Contained
-                    </Button>
+                </Button>
                         </div>
                         </div>
                         </Box>
                     
-                        </form>
+                </form>
                 
                 
                 
