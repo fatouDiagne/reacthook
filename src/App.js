@@ -8,16 +8,18 @@ import {
   Routes
  
 } from "react-router-dom";
+import SlideBar from './components/SlideBar';
 
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <SlideBar/>
         <Routes>
-          <Route path="/" element={<MovieCard/>} />
-           <Route path="movielist" element={<MovieList/>} />
-        </Routes>
+          <Route exact={true} path="/" element={<MovieCard/>}/>
+          <Route  exact={true} path="/movielist" element={<MovieList/>}/>
+      </Routes>
       </BrowserRouter>
       
     </div>
