@@ -37,7 +37,6 @@ const MovieCard = () => {
     
     return (
         <>
-            <SlideBar/>
             <div>
                 <input type="search" placeholder="Rechercher...." autoComplete="off" name={rechercher} onChange={rechercherChange}/>
             </div>

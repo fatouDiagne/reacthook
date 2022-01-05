@@ -48,9 +48,9 @@ const MovieList = () => {
             console.log(listData)
         }
     }
-    React.useEffect(
+   /* React.useEffect(
         console.log(listData)
-    )
+    )*/
     
 
     
