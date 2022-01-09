@@ -17,7 +17,7 @@ export let Data = [
     {
         id: 3,
         title: "Pan",
-        description: "Petit garçon espiègle, Peter (Levi Miller), âgé de 12 ans, possède un tempérament rebelle qu’il a du mal à maîtriser. Mais dans le sinistre orphelinat londonien où il a toujours vécu, sa personnalité n’est pas très bien vue. C’est alors que par une nuit extraordinaire, Peter est transporté dans une contrée fantastique peuplée de pirates, de guerriers et de fées du nom de Pays imaginaire.",
+        description: "Petit garçon espiègle, Peter (Levi Miller), âgé de 12 ans, possède un tempérament rebelle qu’il a du mal à maîtriser. Mais dans le sinistre orphelinat londonien où il a toujours vécu, sa personnalité n’est pas très bien vue. C’est alors que par une nuit extraordinaire.",
         postUrl: "https://i2.wp.com/www.filmspourenfants.net/wp-content/uploads/2018/07/pan-a.jpg?fit=555%2C754&ssl=1",
         rating: 14
     },
@@ -31,7 +31,7 @@ export let Data = [
     {
         id: 5,
         title: "Luca",
-        description: "Luca Paguro est un monstre marin pré-adolescent vivant au large des profondeurs d'une riviera italienne nommée Portorosso. Il passe ses journées à surveiller des poissons moutons dans des champs de récolte marins. Ses parents, Daniela et Lorenzo, l'empêchent d'aller à la surface par peur qu'il se fasse attraper par des humains puis se fasse tuer, mais élever des poissons jour après jour finit par ennuyer Luca.",
+        description: "Luca Paguro est un monstre marin pré-adolescent vivant au large des profondeurs d'une riviera italienne nommée Portorosso. Il passe ses journées à surveiller des poissons moutons dans des champs de récolte marins. Ses parents, Daniela et Lorenzo, l'empêchent d'aller à la surface par peur qu'il se fasse attraper par des humains puis se fasse tuer.",
         postUrl: "https://www.chroniquedisney.fr/imgAnimation/2020/2021-luca-01-big.jpg",
         rating: 9
     },
