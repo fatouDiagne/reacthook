@@ -1,27 +1,17 @@
-import MovieCard from './components/MovieCard';
-import MovieList from './components/MovieList';
 import './styles/App.css';
-import './styles/style.css'
-import {
-  BrowserRouter,
-  Route,
-  Routes
- 
-} from "react-router-dom";
-import SlideBar from './components/SlideBar';
+import MovieCard from './components/MovieCard';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <SlideBar/>
+    <div>
+      <Router>
         <Routes>
-          <Route exact={true} path="/" element={<MovieCard/>}/>
-          <Route  exact={true} path="/movielist" element={<MovieList/>}/>
-      </Routes>
-      </BrowserRouter>
-      
+          <Route path="/" element={<MovieCard/>}/>
+        </Routes>
+       </Router> 
     </div>
   );
 }
