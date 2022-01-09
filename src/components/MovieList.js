@@ -1,14 +1,13 @@
-import * as  React from 'react';
-import {useState } from 'react';
+import React, {useState} from 'react';
+import { Data }  from './Data.js'
+import "../styles/style.css"
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import {useForm} from 'react-hook-form';
+
 
 const MovieList = () => {
-
-    
-    const[title, setTitle]=useState("");
+     const[title, setTitle]=useState("");
     const[description, setDescription]= useState("");
     const [postUrl, setPostUrl] = useState("");
     const [rating, setRating] = useState("");
@@ -19,8 +18,10 @@ const MovieList = () => {
         }
     }
     )
-    //const [list, setList] = useState(listData);
-    
+    const [searchkey, setSearchKey] = useState("");
+    const searchChange = (e) => {
+        setSearchKey(e.target.value)
+    }
     const titleChange=(e)=>{
         setTitle(e.target.value)
     }
@@ -48,16 +49,49 @@ const MovieList = () => {
             console.log(listData)
         }
     }
-   /* React.useEffect(
-        console.log(listData)
-    )*/
-    
-
-    
-
+    const filteredList=()=>{
+        return Data.filter((films) => {
+            if (searchkey == "") {
+                return films
+            }
+            else if (films.title.toLowerCase().includes(searchkey.toLowerCase())) {
+                return films
+            }
+                
+            })
+    }
+   
     return (
+        <div className="container">
         <div>
-            <form>
+             <input type="search" placeholder="Rechercher...." autoComplete="off" name={searchkey} onChange={searchChange}/>
+                {
+                    filteredList().map(index => 
+                        <div key={index.id}>
+                            <div className="text-title">
+                                <h2>{index.title}</h2>
+                            </div> 
+                            <div className="contenant">                            
+                               <img className="mycontainer" src={index.postUrl} alt="images" />
+                                <div className="texte_center">
+                                    <p>{index.description}</p>
+                                    <div className="text-rating">
+                                        <h4>{index.rating }</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                               
+                        </div>
+
+                        
+                                
+                        
+                        )
+                }
+            </div>
+            <div>
+                 <form>
                 <Box
                     component="form"
                     sx={{
@@ -123,12 +157,8 @@ const MovieList = () => {
                         </Box>
                     
                 </form>
-                
-                
-                
-                
-                    </div>
-                );
-            };
-
+                </div>
+            </div>
+    );
+};
 export default MovieList;
