@@ -71,8 +71,10 @@ const MovieList = () => {
                             <div className="text-title">
                                 <h2>{index.title}</h2>
                             </div> 
-                            <div className="contenant">                            
-                               <img className="mycontainer" src={index.postUrl} alt="images" />
+                            <div className="contenant">
+                            <Link to={`/description/${index.id}`}>
+                                    <img className="mycontainer" src={index.postUrl} alt="images" />
+                             </Link>    
                                 <div className="texte_center">
                                     <p>{index.description}</p>
                                     <div className="text-rating">
@@ -84,9 +86,6 @@ const MovieList = () => {
                                
                         </div>
 
-                        
-                                
-                        
                         )
                 }
             </div>
@@ -100,7 +99,6 @@ const MovieList = () => {
                     autoComplete="off"
                     >
                 <div>
-                    
                     <div>
                     <TextField
                     required
@@ -149,8 +147,8 @@ const MovieList = () => {
                     </div>
                     <div>
                              <Button variant="contained" type="submit" onClick={handleChange}>
-                        Contained
-                </Button>
+                                    Contained
+                            </Button>
                         </div>
                         </div>
                         </Box>
